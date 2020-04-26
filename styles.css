@@ -1,0 +1,206 @@
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-family: sans-serif;
+}
+
+ul {
+  list-style: none;
+}
+
+body {
+  height: 1500px;
+}
+
+.main-nav {
+  background-color: slategray;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 10vh;
+}
+
+.main-nav__topLogo {
+  margin-right: auto;
+  margin-left: 20px;
+}
+
+.main-nav__list {
+  width: 50%;
+  margin-left: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.main-nav__list:last-child {
+  margin-right: 20px;
+}
+
+.main-nav__link {
+  padding: 10px 20px;
+  background-color: skyblue;
+}
+
+@media screen and (max-width: 31.25em) {
+  .main-nav {
+    height: 100%;
+  }
+  .main-nav__list {
+    height: 60%;
+    width: 100%;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -ms-flex-line-pack: distribute;
+        align-content: space-around;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+}
+
+.container {
+  margin-top: 10vh;
+}
+
+@media screen and (max-width: 31.25em) {
+  .container {
+    margin-top: 0;
+  }
+}
+
+.introduction {
+  text-align: center;
+}
+
+.introduction img {
+  width: 100px;
+  height: 100px;
+}
+
+#aboutUs, #activities, #studyingAbroad, #articlues {
+  display: -ms-grid;
+  display: grid;
+  margin: 100px auto;
+  max-width: 75%;
+}
+
+#aboutUs .section-content__anime, #activities .section-content__anime, #studyingAbroad .section-content__anime, #articlues .section-content__anime {
+  grid-area: anime;
+  background: #008000;
+}
+
+#aboutUs .section-content__heading, #activities .section-content__heading, #studyingAbroad .section-content__heading, #articlues .section-content__heading {
+  grid-area: heading;
+  background: blue;
+}
+
+#aboutUs .section-content__paragraph, #activities .section-content__paragraph, #studyingAbroad .section-content__paragraph, #articlues .section-content__paragraph {
+  grid-area: paragraph;
+  background: yellow;
+}
+
+#aboutUs .section-content__link, #activities .section-content__link, #studyingAbroad .section-content__link, #articlues .section-content__link {
+  grid-area: link;
+  background: red;
+}
+
+@media screen and (max-width: 31.25em) {
+  #aboutUs, #activities, #studyingAbroad, #articlues {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+}
+
+@media screen and (max-width: 66.8em) {
+  #aboutUs, #activities, #studyingAbroad, #articlues {
+    grid-template: ". . anime" 50px
+ ". heading anime" 50px
+ ". paragraph anime" 200px
+ ". link anime" 50px
+ ". . anime" 50px
+ /50px 1fr 1fr;
+  }
+}
+
+@media screen and (min-width: 66.81em) {
+  #aboutUs, #activities, #studyingAbroad, #articlues {
+    grid-template: ". . anime" 100px
+ ". heading anime" 100px
+ ". paragraph anime" 300px
+ ". link anime" 100px
+ ". . anime" 100px
+ /100px 1fr 1fr;
+  }
+}
+
+.container-content {
+  background: skyblue;
+  padding: 20px;
+}
+
+.container-content__heading {
+  background: slategray;
+}
+
+.container-content__list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  background: olive;
+}
+
+@media screen and (max-width: 31.25em) {
+  .container-content__list {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+}
+
+.container-content__link {
+  height: 100px;
+  width: 100px;
+}
+
+.container-content a:nth-of-type(1) {
+  background: springgreen;
+}
+
+.container-content a:nth-of-type(2) {
+  background: steelblue;
+}
+
+.container-content a:nth-of-type(3) {
+  background: #aa5730;
+}
+
+.identity {
+  text-align: center;
+}
+/*# sourceMappingURL=styles.css.map */
