@@ -1,0 +1,172 @@
+// var
+$breakpoints: (
+  "sp" : "screen and (max-width: 31.25em)",
+  "tab" : "screen and (max-width: 66.8em)",
+  "pc" : "screen and (min-width: 66.81em)",
+);
+
+@mixin mq($breakpoint: sq){
+  @media #{map-get($breakpoints, $breakpoint)}{
+    @content;
+  }
+}
+
+// reset
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+
+ul { 
+  list-style: none;
+}
+body {
+  height: 1500px;
+}
+
+// navStyles
+.main-nav {
+  background-color: slategray;
+  display: flex;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 10vh;
+  &__topLogo {
+    margin-right: auto;
+    margin-left: 20px;
+  }
+  &__list {
+    width: 50%;
+    margin-left: auto;
+    display: flex;
+    justify-content: space-between;
+  }
+  &__list:last-child{
+    margin-right: 20px;
+  }
+  &__link {
+    padding: 10px 20px;
+    background-color: skyblue;
+  }
+  @include mq('sp') {
+    // display: none;
+    height: 100%;
+    &__list {
+      height: 60%;
+      width: 100%;
+      flex-direction: column;
+      align-content: space-around;
+      align-items: center;
+    }
+
+  }
+}
+
+// MAIN
+.container {
+  margin-top: 10vh;
+  @include mq('sp') {
+    margin-top: 0;
+  }
+}
+
+//introduction 
+.introduction {
+  text-align: center;
+  img {
+    width: 100px;
+    height: 100px;
+  }
+}
+
+@mixin content-grid() {
+  display: grid;
+  margin: 100px auto;
+  max-width: 75%;
+  .section-content{
+    &__anime {
+      grid-area: anime;
+      background: #008000;
+    }
+    &__heading {
+      grid-area: heading;
+      background: blue;
+    }
+    &__paragraph {
+      grid-area: paragraph;
+      background: yellow;
+    }
+    &__link {
+      grid-area: link;
+      background: red;
+    }
+  }
+  @include mq('sp'){
+    display: flex;
+    flex-direction: column;
+  }
+  @include mq('tab'){
+    grid-template: 
+    ". . anime" 50px
+    ". heading anime" 50px
+    ". paragraph anime" 200px
+    ". link anime" 50px
+    ". . anime" 50px
+    /50px 1fr 1fr;
+  }
+  @include mq('pc'){
+    grid-template: 
+    ". . anime" 100px
+    ". heading anime" 100px
+    ". paragraph anime" 300px
+    ". link anime" 100px
+    ". . anime" 100px
+    /100px 1fr 1fr;
+  }
+}
+
+#aboutUs, #activities, #studyingAbroad,#articlues {
+  @include content-grid();
+}
+
+// contacts
+.container-content {
+  background: skyblue;
+  padding: 20px;
+  &__heading {
+    background: slategray;
+  }
+  &__list {
+    display: flex;
+    justify-content: space-around;
+    background: olive;
+    @include mq('sp'){
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+  &__link {
+    height: 100px;
+    width: 100px;
+  }
+  & a:nth-of-type(1) {
+    background: springgreen;
+  }
+  & a:nth-of-type(2) {
+    background: steelblue;
+  }
+  & a:nth-of-type(3) {
+    background: rgb(170, 87, 48);
+  }
+}
+
+
+// footer
+.identity {
+  text-align: center;
+}
